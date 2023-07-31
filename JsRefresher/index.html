@@ -5,10 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        
+        // "use strict";
+        // d = 98   
+        // let a = 34;
+        // let a = "This is JavaScript Refresher";
+        // const a = 45 ;
+        a = 4543 + 43;
+        console.log(a);
+
+        /* datatypes in java scripts
+        Numbers
+        Objects
+        Booleans : true or false
+        Strings
+        undefined
+        null */
+
+        function hello()
+        {
+            console.log("Hey JP");
+        }
+
+        let obj1 = {
+            j : 18,
+            p : 32,
+
+            /* func : function myFunc(number)
+            {
+                console.log("The number is : "+number);
+            } */
+        }
+
+        /* document.addEventListener("click",function click()
+        {
+            console.log("Clicked")
+            // alert("Hello")
+            let conf = confirm("Are you sure ?")
+            console.log(conf);
+        }) */
+
+        let arr = [23,32,31];
+        /* console.log(arr);
+        for(arr =0; arr<=arr.length; arr++)
+        {
+            console.log(arr);
+        } */
+
+        console.log(this);  
+        function myfuncc(number)
+        {
+            console.log("This number is : "+ this)
+        }
+
+        let mobj = {
+            f : this,       
+            myfuncc : function (number)
+            {
+                console.log("The number is :"+this);
+            }
+        }
+        mobj.myfuncc();
+        console.log(mobj.f);
+
+        // callback 
+        setTimeout(()=>
+        {
+            console.log("yup")
+        },3000);
+        console.log("I am downside script");
+
+        // promisses
+
     </script>
 </head>
 <body>
-    
+    <h1>I Am Refreshing the concept of JavaScript</h1>
 </body>
 </html>
