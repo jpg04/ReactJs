@@ -14,7 +14,7 @@ export default function TextForm(props) {
     setText(newText)
   }
 
-  /* const handleClearClick = ()=>
+  const handleClearClick = ()=>
   {
     let newText = '';
     setText(newText)
@@ -32,7 +32,7 @@ export default function TextForm(props) {
     }
     let newText = text.split(' ').map(capitalize).join(' ');
     setText(newText)
-  } */
+  }
 
   const handleOnChange = (Event) =>{
     // console.log("on change");
@@ -51,9 +51,9 @@ export default function TextForm(props) {
         </div>
         <button className = "btn btn-primary mx-2" onClick={handleUpClick}>Convert To Upercase</button>
         <button className = "btn btn-primary mx-2" onClick={handleLowerClick}>Convert To Lowercase</button>
-        {/* <button className = "btn btn-secondary mx-2" onClick={handleClearClick}>Clear Text</button>
+        <button className = "btn btn-secondary mx-2" onClick={handleClearClick}>Clear Text</button>
         <button className = "btn btn-info mx-2" onClick={handleReverseClick}>Reverse Text</button>
-        <button className = "btn btn-warning" onClick={handleFirstCapClick}>First Letter Capital</button> */}
+        <button className = "btn btn-warning" onClick={handleFirstCapClick}>First Letter Capital</button>
     </div>
 
     <div className="container my-3">
