@@ -25,6 +25,7 @@ export default function TextForm(props) {
     let newText = text.split('').reverse().join('');
     setText(newText)
   }
+
   const handleFirstCapClick = ()=>
   {
     function capitalize(str) {
@@ -32,6 +33,17 @@ export default function TextForm(props) {
     }
     let newText = text.split(' ').map(capitalize).join(' ');
     setText(newText)
+  }
+  const handleCopyClick = ()=>
+  {
+    var text = document.getElementById("myBox");
+    text.select();
+    navigator.clipboard.writeText(text.value);
+  }
+
+  const handleExtraSpacesClick = ()=> {
+    const newText = text.split(/[ ]+/);
+    setText(newText.join(" "))
   }
 
   const handleOnChange = (Event) =>{
@@ -53,7 +65,9 @@ export default function TextForm(props) {
         <button className = "btn btn-primary mx-2" onClick={handleLowerClick}>Convert To Lowercase</button>
         <button className = "btn btn-secondary mx-2" onClick={handleClearClick}>Clear Text</button>
         <button className = "btn btn-info mx-2" onClick={handleReverseClick}>Reverse Text</button>
-        <button className = "btn btn-warning" onClick={handleFirstCapClick}>First Letter Capital</button>
+        <button className = "btn btn-warning mx-2" onClick={handleFirstCapClick}>First Letter Capital</button>
+        <button className = "btn btn-info mx-2" onClick={handleCopyClick}>Copy Text</button>
+        <button className = "btn btn-warning" onClick={handleExtraSpacesClick}>Remove Extra Spaces</button>
     </div>
 
     <div className="container my-3">
