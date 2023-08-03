@@ -5,6 +5,12 @@ import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
+import { Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route
+  // Link
+} from 'react-router-dom';
 
 function App() {
   const [mode, setMode] = useState('light')  //whether dark mode is enabled or not
@@ -49,13 +55,21 @@ function App() {
     <>
       {/* <Navbar />
       <Navbar title="TextUtils" aboutText="About" /> */}
-
+      
+      <Router>
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert}/>
       <div className="container my-3">
-        <TextForm showAlert={showAlert} heading="Enter the Text to Analyze Below" mode={mode} />
-        <About />
+      
+      <Routes>
+            <Route exact path="/about" element={<About />}>
+            </Route>
+            <Route exact path="/" element={<TextForm heading="Enter text to analyze"  mode={mode} showAlert={showAlert} />}>
+            </Route>
+      </Routes>
+
       </div>
+      </Router>
     </>
   );
 }
