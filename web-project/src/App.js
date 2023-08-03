@@ -27,12 +27,21 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor='black';
       showAlert("Dark Mode is Enabled", "success");
+      document.title='TextUtils - Dark Mode';
+      
+      /* setInterval(()=>{
+        document.title='TextUtils is Amazing App';
+      },2000);
+      setInterval(()=>{
+        document.title='Install TextUtils App For Better Experience';
+      },1500); */
     }
     else
     {
       setMode('light');
       document.body.style.backgroundColor='white';
       showAlert("Light Mode is Enabled", "success");
+      document.title='TextUtils - Light Mode';
     }
   }
 
