@@ -5,40 +5,47 @@ export default function TextForm(props) {
     // console.log("Uppercase was clicked : " +text);
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted To UpperCase...!!!","success")
   };
-
+  
   const handleLowerClick = () => {
     // console.log("Uppercase was clicked : " +text);
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted To LowerCase...!!!","success")
   };
-
+  
   const handleClearClick = () => {
     let newText = "";
     setText(newText);
+    props.showAlert("Text Form is Cleared...!!!","success")
   };
-
+  
   const handleReverseClick = () => {
     let newText = text.split("").reverse().join("");
     setText(newText);
+    props.showAlert("Text is Converted to Reverse...!!!","success")
   };
-
+  
   const handleFirstCapClick = () => {
     function capitalize(str) {
       return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
     }
     let newText = text.split(" ").map(capitalize).join(" ");
     setText(newText);
+    props.showAlert("First Letter is Set to Capital...!!!","success")
   };
   const handleCopyClick = () => {
     var text = document.getElementById("myBox");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("String Copied...!!!","success")
   };
-
+  
   const handleExtraSpacesClick = () => {
     const newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert("Extra Spaces Removed...!!!","success")
   };
 
   const handleOnChange = (Event) => {
