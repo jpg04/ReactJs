@@ -36,10 +36,10 @@ export default function TextForm(props) {
     props.showAlert("First Letter is Set to Capital...!!!","success")
   };
   const handleCopyClick = () => {
-    var text = document.getElementById("myBox");
-    text.select();
-    navigator.clipboard.writeText(text.value);
-    document.getSelection().removeAllRanges();
+    // var text = document.getElementById("myBox");
+    // text.select();
+    navigator.clipboard.writeText(text);
+    // document.getSelection().removeAllRanges();
     props.showAlert("String Copied...!!!","success")
   };
   
@@ -98,7 +98,7 @@ export default function TextForm(props) {
       <div className="container my-3" style={{color:props.mode === 'dark'?'green':'black'}}>
         <h1>Your Text Summary</h1>
         <p>
-          {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} character
+          {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} character
         </p>
         <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes read</p>
         <h2>Preview</h2>
